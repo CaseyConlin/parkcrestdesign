@@ -1,0 +1,30 @@
+.skywrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #0091cb !important;
+  width: 100vw;
+  height: 30vw;
+}
+.skyheadline {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8vw;
+  font-weight: 100;
+  transform: scaleY(2);
+  font-family: cloudFont;
+  letter-spacing: 0.3rem;
+  white-space: pre;
+}
+.writerplane {
+  position: absolute;
+  margin-left: 0;
+  width: 12vw;
+  transform: rotate(-270deg);
+}

@@ -3,9 +3,10 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const name = "Casey Conlin";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "Parkcrest Design";
 
 export default function Layout({ children, home }) {
   return (
@@ -14,7 +15,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Parkcrest Design offers complete webpages and web development support as well as print materials to support businesses in the Hudson Valley, NY and beyond."
         />
         <meta
           property="og:image"
