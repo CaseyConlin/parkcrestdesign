@@ -12,7 +12,7 @@ import localFont from "next/font/local";
 const cloudFont = localFont({ src: "../pages/cloudstorm.woff2" });
 export default function HeadlineAnimation({}) {
   const [width, setWidth] = useState(0);
-  const [headlineTop, setHeadlineTop] = useState();
+  const [headlineTop, setHeadlineTop] = useState(0);
   const [windowWidth, setWindowWidth] = useState();
 
   const headlines = [
@@ -42,6 +42,7 @@ export default function HeadlineAnimation({}) {
       duration: animationDuration,
     },
   }));
+
   const writerPlaneAnimation = () => {
     writerPlaneApi.start({
       from: {
