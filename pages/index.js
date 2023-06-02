@@ -14,6 +14,8 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+
         <p>[Your Self Introduction]</p>
 
         <p>
