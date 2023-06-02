@@ -24,9 +24,6 @@ export default function HeadlineAnimation({}) {
   const [headline, setHeadline] = useState(headlines[0]);
   const ref = useRef(null);
 
-  const writeAnimationDuration = 6;
-  const writeAnimationReplayDelay = 5;
-
   useEffect(() => {
     setHeadlineTop(ref.current.offsetTop);
     setWidth(ref.current.offsetWidth);
@@ -40,7 +37,7 @@ export default function HeadlineAnimation({}) {
   const animationDuration = 1500;
 
   const [writerPlane, writerPlaneApi] = useSpring(() => ({
-    from: { x: "0vw", y: "0vw" },
+    from: { x: "-60vw", y: "0vw" },
     config: {
       duration: animationDuration,
     },
@@ -49,17 +46,39 @@ export default function HeadlineAnimation({}) {
     writerPlaneApi.start({
       from: {
         x: "-60vw",
-        y: headlineTop / 2 - 75,
+        y: headlineTop - 75,
         rotate: "-20deg",
       },
       to: [
-        { x: "-30vw", y: headlineTop / 2 - 105 },
-        { x: "0vw", y: headlineTop / 2 - 95 },
-        { x: "30vw", y: headlineTop / 2 - 105 },
-        { x: "60vw", y: headlineTop / 2 - 95 },
+        { x: "-30vw", y: headlineTop - 65 },
+        { x: "0vw", y: headlineTop - 75 },
+        { x: "30vw", y: headlineTop - 65 },
+        { x: "60vw", y: headlineTop - 75 },
       ],
     });
   };
+
+  const [backPlane, backPlaneApi] = useSpring(() => ({
+    from: { x: "-60vw", y: "0vw" },
+    config: {
+      duration: animationDuration * 3,
+    },
+  }));
+
+  backPlaneApi.start({
+    from: {
+      x: "-60vw",
+      y: headlineTop + 110,
+      rotate: "-25deg",
+    },
+    delay: 1000,
+    to: [
+      { x: "-30vw", y: headlineTop + 120 },
+      { x: "0vw", y: headlineTop + 110 },
+      { x: "30vw", y: headlineTop + 120 },
+      { x: "60vw", y: headlineTop + 110 },
+    ],
+  });
 
   const [trail, headlineApi] = useTrail(headline.length, () => ({
     config: {
@@ -72,11 +91,6 @@ export default function HeadlineAnimation({}) {
   useIsomorphicLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
     setWindowWidth(window.innerWidth);
-    console.log(
-      Math.floor(
-        ((windowWidth - width) / windowWidth) * 3.75 * animationDuration
-      )
-    );
 
     headlineApi.start({
       from: { y: "0.5vw", opacity: 0, scale: 0.15 },
@@ -130,6 +144,28 @@ export default function HeadlineAnimation({}) {
     });
   }, [width, headline]);
 
+  const topCloudAnimation = useSpring({
+    config: { friction: 500 },
+    from: { opacity: 0, x: "0vw" },
+    to: [
+      { opacity: 1, x: "10vw" },
+      { opacity: 0, x: "20vw" },
+    ],
+    loop: true,
+  });
+
+  const bottomCloudAnimation = useSpring({
+    config: { friction: 500 },
+    from: { opacity: 0, x: "-40vw", y: "20px" },
+    delay: 2500,
+    to: [
+      { opacity: 1, x: "-20vw", y: "35px" },
+      { opacity: 1, x: "-30vw", y: "20px" },
+      { opacity: 0, x: "-40vw", y: "20px" },
+    ],
+    loop: true,
+  });
+
   return (
     <div className={styles.skywrapper}>
       <animated.img
@@ -139,6 +175,7 @@ export default function HeadlineAnimation({}) {
           ...writerPlane,
         }}
       />
+
       <h3 ref={ref} className={styles.skyheadline}>
         {trail.map(({ y, scale, opacity, ...style }, index) => (
           <animated.span
@@ -150,6 +187,30 @@ export default function HeadlineAnimation({}) {
           </animated.span>
         ))}
       </h3>
+
+      <animated.img
+        className={styles.backplane}
+        src="/images/paper-airplane.png"
+        style={{
+          ...backPlane,
+        }}
+      />
+
+      <animated.img
+        className={styles.topcloud}
+        src="/images/cloud.png"
+        style={{
+          ...topCloudAnimation,
+        }}
+      />
+
+      <animated.img
+        className={styles.bottomcloud}
+        src="/images/cloud.png"
+        style={{
+          ...bottomCloudAnimation,
+        }}
+      />
     </div>
   );
 }

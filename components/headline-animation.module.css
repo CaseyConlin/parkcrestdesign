@@ -1,4 +1,5 @@
 .skywrapper {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -6,6 +7,7 @@
   background-color: #0091cb !important;
   width: 100vw;
   height: 30vw;
+  overflow: hidden;
 }
 .skyheadline {
   display: flex;
@@ -24,7 +26,22 @@
 }
 .writerplane {
   position: absolute;
-  margin-left: 0;
   width: 12vw;
-  transform: rotate(-270deg);
+  transform: rotate(-20deg);
+}
+
+.backplane {
+  position: absolute;
+  width: 6vw;
+  transform: rotate(-18deg);
+}
+.topcloud {
+  position: absolute;
+  top: 20px;
+  width: 5vw;
+}
+.bottomcloud {
+  position: absolute;
+  bottom: 40px;
+  width: 5vw;
 }
