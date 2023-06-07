@@ -8,7 +8,13 @@ import { useEffect } from "react";
 const name = "Casey Conlin";
 export const siteTitle = "Parkcrest Design";
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) {
   return (
     <div className={styles.container}>
       <Head>
