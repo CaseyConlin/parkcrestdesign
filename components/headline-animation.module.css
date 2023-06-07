@@ -33,7 +33,7 @@
 .backplane {
   position: absolute;
   width: 6vw;
-  transform: rotate(-18deg);
+  transform: rotate(-25deg);
 }
 .topcloud {
   position: absolute;

@@ -10,10 +10,11 @@ import styles from "./headline-animation.module.css";
 import localFont from "next/font/local";
 
 const cloudFont = localFont({ src: "../pages/cloudstorm.woff2" });
+
 export default function HeadlineAnimation({}) {
   const [width, setWidth] = useState(0);
   const [headlineTop, setHeadlineTop] = useState(0);
-  const [windowWidth, setWindowWidth] = useState();
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const headlines = [
     "Your Wingman for Websites",
@@ -36,6 +37,15 @@ export default function HeadlineAnimation({}) {
 
   const animationDuration = 1500;
 
+  const headlineUpdate = () => {
+    const headlineIndex = headlines.indexOf(headline);
+    if (headlineIndex >= headlines.length - 1) {
+      setHeadline(headlines[0]);
+    } else {
+      setHeadline(headlines[headlineIndex + 1]);
+    }
+  };
+
   const [writerPlane, writerPlaneApi] = useSpring(() => ({
     from: { x: "-60vw", y: "0vw" },
     config: {
@@ -47,14 +57,13 @@ export default function HeadlineAnimation({}) {
     writerPlaneApi.start({
       from: {
         x: "-60vw",
-        y: headlineTop - 75,
-        rotate: "-20deg",
+        y: (headlineTop - 75).toString(),
       },
       to: [
-        { x: "-30vw", y: headlineTop - 65 },
-        { x: "0vw", y: headlineTop - 75 },
-        { x: "30vw", y: headlineTop - 65 },
-        { x: "60vw", y: headlineTop - 75 },
+        { x: "-30vw", y: (headlineTop - 65).toString() },
+        { x: "0vw", y: (headlineTop - 75).toString() },
+        { x: "30vw", y: (headlineTop - 65).toString() },
+        { x: "60vw", y: (headlineTop - 75).toString() },
       ],
     });
   };
@@ -69,24 +78,23 @@ export default function HeadlineAnimation({}) {
   backPlaneApi.start({
     from: {
       x: "-60vw",
-      y: headlineTop + 110,
-      rotate: "-25deg",
+      y: (headlineTop + 110).toString(),
     },
     delay: 1000,
+
     to: [
-      { x: "-30vw", y: headlineTop + 120 },
-      { x: "0vw", y: headlineTop + 110 },
-      { x: "30vw", y: headlineTop + 120 },
-      { x: "60vw", y: headlineTop + 110 },
+      { x: "-30vw", y: (headlineTop + 120).toString() },
+      { x: "0vw", y: (headlineTop + 110).toString() },
+      { x: "30vw", y: (headlineTop + 120).toString() },
+      { x: "60vw", y: (headlineTop + 110).toString() },
     ],
   });
 
   const [trail, headlineApi] = useTrail(headline.length, () => ({
+    from: { y: "0.5vw", opacity: 0, scale: 0.15 },
     config: {
       duration: 135,
     },
-
-    from: { y: "0.5vw", opacity: 0, scale: 0.15 },
   }));
 
   useIsomorphicLayoutEffect(() => {
@@ -95,53 +103,45 @@ export default function HeadlineAnimation({}) {
 
     headlineApi.start({
       from: { y: "0.5vw", opacity: 0, scale: 0.15 },
-      to: [
-        {
+      to: async (next, cancel) => {
+        await next({
           y: "0.5vw",
           opacity: 0,
           scale: 0.25,
-
           delay: Math.floor(
             ((windowWidth - width) / windowWidth) * 2.5 * animationDuration
           ),
-        },
-        { y: "0vw", opacity: 0.3, scale: 0.5 },
-        {
-          y: "0vw",
-          opacity: 1,
-          scale: 1,
-          config: { friction: 100 },
-        },
-        {
+        });
+
+        await next({ y: "0vw", opacity: 0.3, scale: 0.5 }),
+          await next({
+            y: "0vw",
+            opacity: 1,
+            scale: 1,
+            config: { friction: 100 },
+          });
+        await next({
           y: "0vw",
           opacity: 1,
           scale: 1,
           delay: 3500,
-        },
-
-        {
+        });
+        await next({
           y: "-0.75vw",
           opacity: 0,
           scale: 1.25,
           delay: 500,
-        },
-        {
+        });
+        await next({
           y: "-0.75vw",
           opacity: 0,
           scale: 1.35,
           config: { friction: 20 },
           delay: 1500,
-        },
-        { y: "-1vw", opacity: 0, scale: 0, delay: 1000 },
-        () => {
-          const headlineIndex = headlines.indexOf(headline);
-          if (headlineIndex >= headlines.length - 1) {
-            setHeadline(headlines[0]);
-          } else {
-            setHeadline(headlines[headlineIndex + 1]);
-          }
-        },
-      ],
+        });
+        await next({ y: "-1vw", opacity: 0, scale: 0, delay: 1000 });
+        await next({ onResolve: () => headlineUpdate() });
+      },
     });
   }, [width, headline]);
 

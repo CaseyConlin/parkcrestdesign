@@ -14,6 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/posts/post1.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/posts/post1.js",
+    "components/date.js",
+    "components/headline-animation.js"
+  ],
   "exclude": ["node_modules"]
 }
