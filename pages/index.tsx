@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
@@ -5,7 +6,10 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import DateFormat from "../components/date";
 
+import { useSpring, animated } from "@react-spring/web";
+
 import HeadlineAnimation from "../components/headline-animation";
+import { isMainThread } from "worker_threads";
 
 export default function Home({
   allPostsData,
@@ -21,6 +25,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
       <section className={utilStyles.headingMd}>
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
 
@@ -30,7 +35,8 @@ export default function Home({
           (This is a sample website - you’ll be building a site like this in{" "}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
-        <HeadlineAnimation />
+
+        {/* <HeadlineAnimation /> */}
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
