@@ -4,6 +4,7 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { useEffect } from "react";
+import Navbar from "../components/navbar";
 
 const name = "Casey Conlin";
 export const siteTitle = "Parkcrest Design";
@@ -32,6 +33,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <Navbar />
       <header className={styles.header}>
         {home ? (
           <>
