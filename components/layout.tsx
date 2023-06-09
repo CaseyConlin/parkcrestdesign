@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { useEffect } from "react";
 import Navbar from "../components/navbar";
+import Footer from "./footer";
 
 const name = "Casey Conlin";
 export const siteTitle = "Parkcrest Design";
@@ -73,6 +74,7 @@ export default function Layout({
           <Link href="/">← Back to home</Link>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
