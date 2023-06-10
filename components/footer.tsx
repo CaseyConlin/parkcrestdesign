@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-wrap justify-center -mx-5">
           <a href="/">
             <Image
-              className="max-w-xs filter transition-all duration-1000 grayscale hover:grayscale-0"
+              className="max-w-xs filter transition-all duration-1000 "
               priority
               src={parkcrestLogo}
               alt="Parkcrest Design logo with globe"

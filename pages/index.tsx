@@ -5,9 +5,8 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import DateFormat from "../components/date";
-
 import HeadlineAnimation from "../components/headline-animation";
-import { isMainThread } from "worker_threads";
+import CardContainer from "../components/cards/card-container";
 
 export default function Home({
   allPostsData,
@@ -25,17 +24,13 @@ export default function Home({
       </Head>
 
       <section className={utilStyles.headingMd}>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-        <p>[Your Self Introduction]</p>
-
-        <p>
-          (This is a sample website - you’ll be building a site like this in{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-
         <HeadlineAnimation />
       </section>
+
+      <section>
+        <CardContainer />
+      </section>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>

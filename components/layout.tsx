@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Navbar from "../components/navbar";
 import Footer from "./footer";
 
-const name = "Casey Conlin";
+// const name = "Casey Conlin";
 export const siteTitle = "Parkcrest Design";
 
 export default function Layout({
@@ -35,8 +35,8 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
-      <header className={styles.header}>
-        {home ? (
+      <header>
+        {/* {home ? (
           <>
             <Image
               priority
@@ -66,14 +66,14 @@ export default function Layout({
               </Link>
             </h2>
           </>
-        )}
+        )} */}
       </header>
       <main>{children}</main>
-      {!home && (
+      {/* {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>
-      )}
+      )} */}
       <Footer />
     </div>
   );
