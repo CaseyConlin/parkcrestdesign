@@ -5,9 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import DateFormat from "../components/date";
-
 import HeadlineAnimation from "../components/headline-animation";
-import { isMainThread } from "worker_threads";
 import CardContainer from "../components/cards/card-container";
 
 export default function Home({
@@ -28,7 +26,11 @@ export default function Home({
       <section className={utilStyles.headingMd}>
         <HeadlineAnimation />
       </section>
-      <CardContainer />
+
+      <section>
+        <CardContainer />
+      </section>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
