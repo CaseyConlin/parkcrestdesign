@@ -7,6 +7,7 @@ import Link from "next/link";
 import DateFormat from "../components/date";
 import HeadlineAnimation from "../components/headline-animation";
 import CardContainer from "../components/cards/card-container";
+import { FeatureItem } from "../components/feature-item";
 
 export default function Home({
   allPostsData,
@@ -26,7 +27,24 @@ export default function Home({
       <section className={utilStyles.headingMd}>
         <HeadlineAnimation />
       </section>
-
+      <section>
+        <FeatureItem
+          title="Defending Intellectual Freedom"
+          content="From checkout to global sales tax compliance, companies around the
+            world use Flowbite to simplify their payment stack."
+          link="google..com"
+          videoUrl="https://embed-ssl.wistia.com/deliveries/405b909f1776ba722fdbba200ee8fca834d62ede/file.mp4"
+        />
+      </section>
+      <section>
+        <FeatureItem
+          title="Defending Intellectual Freedom"
+          content="From checkout to global sales tax compliance, companies around the
+          world use Flowbite to simplify their payment stack."
+          link="google.com"
+          videoUrl="https://embed-ssl.wistia.com/deliveries/7f7ab82fbbffb91bc1bd4cb45ebbf68c427b11e8/file.mp4"
+        />
+      </section>
       <section>
         <CardContainer />
       </section>
