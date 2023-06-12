@@ -8,6 +8,7 @@ import DateFormat from "../components/date";
 import HeadlineAnimation from "../components/headline-animation";
 import CardContainer from "../components/cards/card-container";
 import { FeatureItem } from "../components/feature-item";
+import ContactForm from "../components/contact";
 
 export default function Home({
   allPostsData,
@@ -28,6 +29,10 @@ export default function Home({
         <HeadlineAnimation />
       </section>
       <section>
+        <CardContainer />
+      </section>
+
+      <section>
         <FeatureItem
           title="Defending Intellectual Freedom"
           content="From checkout to global sales tax compliance, companies around the
@@ -36,6 +41,7 @@ export default function Home({
           videoUrl="https://embed-ssl.wistia.com/deliveries/405b909f1776ba722fdbba200ee8fca834d62ede/file.mp4"
         />
       </section>
+
       <section>
         <FeatureItem
           title="Defending Intellectual Freedom"
@@ -44,9 +50,6 @@ export default function Home({
           link="google.com"
           videoUrl="https://embed-ssl.wistia.com/deliveries/7f7ab82fbbffb91bc1bd4cb45ebbf68c427b11e8/file.mp4"
         />
-      </section>
-      <section>
-        <CardContainer />
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -63,6 +66,7 @@ export default function Home({
           ))}
         </ul>
       </section>
+      <ContactForm />
     </Layout>
   );
 }
