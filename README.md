@@ -1,1 +1,1 @@
-Web design site based on Next.js template. 
+Responsive website based on Next.js template.
