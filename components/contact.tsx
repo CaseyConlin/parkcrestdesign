@@ -112,7 +112,7 @@ export default function ContactForm() {
               >
                 <span className="sr-only">email</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 hover:scale-125 duration-500 transition-all"
                   aria-hidden="true"
                   fill="currentcolor"
                   viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ export default function ContactForm() {
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 hover:scale-125 duration-500 transition-all"
                   aria-hidden="true"
                   fill="currentcolor"
                   viewBox="0 0 24 24"
@@ -153,7 +153,7 @@ export default function ContactForm() {
               >
                 <span className="sr-only">GitHub</span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 hover:scale-125 duration-500 transition-all"
                   aria-hidden="true"
                   fill="currentcolor"
                   viewBox="0 0 24 24"
@@ -173,7 +173,7 @@ export default function ContactForm() {
               >
                 <span className="sr-only">email</span>
                 <svg
-                  className="w-7 h-7"
+                  className="w-7 h-7 -mx-2 -mt-0.5 hover:scale-125 duration-500 transition-all"
                   aria-hidden="true"
                   fill="currentcolor"
                   viewBox="0 0 24 24"
@@ -250,7 +250,7 @@ export default function ContactForm() {
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
-              className="px-10 mt-8 py-2 bg-pd-blue text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
+              className="px-10 mt-8 py-2 bg-pd-blue text-gray-50 font-light rounded-md text-lg flex flex-row items-center hover:bg-pd-blue-dark hover:scale-105 duration-500 transition-all "
             >
               {buttonText}
               <svg

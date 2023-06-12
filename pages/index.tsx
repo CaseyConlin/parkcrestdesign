@@ -39,6 +39,7 @@ export default function Home({
             world use Flowbite to simplify their payment stack."
           link="google..com"
           videoUrl="https://embed-ssl.wistia.com/deliveries/405b909f1776ba722fdbba200ee8fca834d62ede/file.mp4"
+          siteUrl="https://freeforallny.org/"
         />
       </section>
 
@@ -49,6 +50,7 @@ export default function Home({
           world use Flowbite to simplify their payment stack."
           link="google.com"
           videoUrl="https://embed-ssl.wistia.com/deliveries/7f7ab82fbbffb91bc1bd4cb45ebbf68c427b11e8/file.mp4"
+          siteUrl="https://thomsenpainting.com/"
         />
       </section>
 

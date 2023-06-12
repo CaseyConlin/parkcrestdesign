@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 export const FeatureItem = (props: {
   title: string;
   content: string;
   link: string;
   videoUrl: string;
+  siteUrl: string;
 }) => {
   const videoEl = useRef(null);
 
@@ -29,29 +31,43 @@ export const FeatureItem = (props: {
             {props.content}
           </p>
 
-          <a
+          <Link
             href={props.link}
-            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-pd-blue hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-bold text-center text-black rounded-lg bg-pd-green focus:ring-4 focus:ring-primary-300 hover:scale-105 duration-500 transition-all hover:bg-pd-green-dark hover:no-underline"
           >
-            See More
+            Learn More
             <svg
-              className="w-5 h-5 ml-2 -mr-1"
+              className="w-6 h-6 ml-2 -mr-1"
               fill="currentColor"
-              viewBox="0 0 20 20"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 fillRule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 18v-4h-7v-4h7v-4l6 6-6 6z"
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
           <a
-            href="#"
-            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            href={props.siteUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 hover:no-underline hover:scale-105 duration-500 transition-all"
           >
-            Contact
+            Live Site
+            <svg
+              className="w-4 h-4 ml-2 -mr-1 -mt-2"
+              fill="currentColor"
+              style={{ transform: "" }}
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
           </a>
         </div>
         <div className="span-9 lg:mt-0 lg:col-span-5 lg:flex">
@@ -66,22 +82,6 @@ export const FeatureItem = (props: {
               ref={videoEl}
             />
           </div>
-          {/* <video
-            id="ucla-vid"
-            loop={true}
-            autoPlay={true}
-            playsInline={true}
-            muted={true}
-          >
-            <source
-              src="https://player.vimeo.com/progressive_redirect/download/813254705/rendition/source/23su_homepage_video%20%28Original%29.mp4?loc=external&amp;signature=b1674566f5648d14519a222a264136a22ceecc3c67557af30101b6bdf3b44f4c"
-              type="video/mp4"
-            />
-            <source
-              src="/themes/unex/images/148300_21sp_inst_homepage_v15.mp4"
-              type="video/mp4"
-            />
-          </video> */}
         </div>
       </div>
     </section>
