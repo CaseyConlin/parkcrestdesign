@@ -19,8 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/posts/post1.js",
-    "components/date.js",
-    "components/headline-animation.js",
+    "components/date.tsx",
+    "components/headline-animation.tsx",
     "components/contact.tsx"
   ],
   "exclude": ["node_modules"]
