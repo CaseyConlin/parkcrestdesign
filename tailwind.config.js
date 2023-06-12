@@ -8,7 +8,9 @@ module.exports = {
     extend: {
       colors: {
         "pd-blue": "rgb(0, 145, 203, 1)",
+        "pd-blue-dark": "rgb(0,116,162, 1)",
         "pd-green": "rgb(161, 255, 161, 1)",
+        "pd-green-dark": "rgb(112,255,112, 1)",
       },
     },
   },
