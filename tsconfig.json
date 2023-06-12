@@ -20,7 +20,8 @@
     "**/*.tsx",
     "pages/posts/post1.js",
     "components/date.js",
-    "components/headline-animation.js"
+    "components/headline-animation.js",
+    "components/contact.tsx"
   ],
   "exclude": ["node_modules"]
 }

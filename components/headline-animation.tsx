@@ -112,14 +112,17 @@ export default function HeadlineAnimation({}) {
             ((windowWidth - width) / windowWidth) * 2.5 * animationDuration
           ),
         });
-
-        await next({ y: "0vw", opacity: 0.3, scale: 0.5 }),
-          await next({
-            y: "0vw",
-            opacity: 1,
-            scale: 1,
-            config: { friction: 100 },
-          });
+        await next({
+          y: "0vw",
+          opacity: 0.3,
+          scale: 0.5,
+        });
+        await next({
+          y: "0vw",
+          opacity: 1,
+          scale: 1,
+          config: { friction: 100 },
+        });
         await next({
           y: "0vw",
           opacity: 1,
@@ -139,8 +142,15 @@ export default function HeadlineAnimation({}) {
           config: { friction: 20 },
           delay: 1500,
         });
-        await next({ y: "-1vw", opacity: 0, scale: 0, delay: 1000 });
-        await next({ onResolve: () => headlineUpdate() });
+        await next({
+          y: "-1vw",
+          opacity: 0,
+          scale: 0,
+          delay: 1000,
+        });
+        await next({
+          onResolve: () => headlineUpdate(),
+        });
       },
     });
   }, [width, headline]);
