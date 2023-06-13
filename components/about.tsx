@@ -20,7 +20,7 @@ export default function AboutComponent() {
             and nonprofits connect with and provide information to their users
             in ways that will deliver results. For over 10 years, we've been
             building websites, providing web development services, and creating
-            print materials that our clients and their users love. Whether it’s
+            print materials that our clients and their users love. Whether it's
             a website or a restaurant menu, we always employ the latest best
             practice in design and execution to maximize the reach and efficacy
             of our clients' efforts.
