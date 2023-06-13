@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useSpring, animated } from "@react-spring/web";
 import parkcrestLogo from "../public/images/parkcrest_design_logo_black.svg";
 
-export default function Navbar() {
+export default function Navbar({ openModal = () => {} }) {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileWidth, setIsMobileWidth] = useState(0);
@@ -51,6 +51,7 @@ export default function Navbar() {
         </Link>
         <div className="flex md:order-2 z-50">
           <button
+            onClick={() => openModal()}
             type="button"
             className="hidden md:flex text-white bg-pd-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 hover:bg-pd-blue-dark hover:scale-105 duration-500 transition-all z-50"
           >
@@ -167,7 +168,7 @@ export default function Navbar() {
           <div className="">
             <div>
               <div className="font-semibold">
-                Websites to Connect to Your Users
+                Websites to Connect With Your Users
               </div>
               <span className="text-sm text-gray-500 ">
                 We bring your vision to life by providing guidance and working

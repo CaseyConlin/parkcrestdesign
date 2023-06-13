@@ -171,7 +171,7 @@ export default function ContactForm() {
                 title="Call"
                 className="text-pd-blue hover:text-black"
               >
-                <span className="sr-only">email</span>
+                <span className="sr-only">phone</span>
                 <svg
                   className="w-7 h-7 -mx-2 -mt-0.5 hover:scale-125 duration-500 transition-all"
                   aria-hidden="true"
