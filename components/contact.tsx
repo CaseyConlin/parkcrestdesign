@@ -285,8 +285,8 @@ export default function ContactForm() {
 
       <section className="">
         <h1
-          className={`text-4xl font-bold text-center md:mt-60 my-10 gradient-text text-gray-700 ${
-            errors ? "md:mt-80" : "md:mt-60"
+          className={`text-4xl font-bold text-center md:mt-48 my-10 gradient-text text-gray-700 ${
+            errors ? "md:mt-80" : "md:mt-50"
           }`}
         ></h1>
       </section>
