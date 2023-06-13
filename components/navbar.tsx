@@ -133,16 +133,7 @@ export default function Navbar({ openModal = () => {} }) {
                 </svg>
               </button>
             </li>
-            <li>
-              <Link
-                href="/print"
-                className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 hover:no-underline md:hover:bg-transparent md:hover:text-pd-blue md:p-0 md: z-50 hover:scale-105 duration-500 transition-all ${
-                  pathname.startsWith("/print") ? "text-pd-blue-dark" : ""
-                }`}
-              >
-                Print
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="/contact"
@@ -209,13 +200,16 @@ export default function Navbar({ openModal = () => {} }) {
             </li>
             <li>
               <Link
-                href="/websites/sissys"
+                href="/websites/stoneridge"
                 className="block p-3 rounded-lg hover:bg-gray-100 hover:no-underline"
               >
-                <div className="font-semibold">Cafe Olé</div>
+                <div className="font-semibold">
+                  Library Events Management with Increased Visbility
+                </div>
                 <span className="text-sm text-gray-500 ">
-                  A site that gets right to the point: menu, hours, & online
-                  ordering as integrated to a point-of-sale system.
+                  This library's events calendar provides unprecedented organic
+                  SEO reach, as well as events management tools for library
+                  users and staff.
                 </span>
               </Link>
             </li>
