@@ -39,6 +39,7 @@ export default function HeadlineAnimation({}) {
 
   const headlineUpdate = () => {
     const headlineIndex = headlines.indexOf(headline);
+    console.log("hey");
     if (headlineIndex >= headlines.length - 1) {
       setHeadline(headlines[0]);
     } else {
@@ -47,7 +48,7 @@ export default function HeadlineAnimation({}) {
   };
 
   const [writerPlane, writerPlaneApi] = useSpring(() => ({
-    from: { x: "-60vw", y: "0vw" },
+    from: { x: "-60vw", y: "0vw", rotate: "-20deg" },
     config: {
       duration: animationDuration,
     },
@@ -57,36 +58,54 @@ export default function HeadlineAnimation({}) {
     writerPlaneApi.start({
       from: {
         x: "-60vw",
-        y: (headlineTop - 75).toString(),
+        y: (headlineTop - 75).toString() + "px",
+        rotate: "-20deg",
       },
       to: [
-        { x: "-30vw", y: (headlineTop - 65).toString() },
-        { x: "0vw", y: (headlineTop - 75).toString() },
-        { x: "30vw", y: (headlineTop - 65).toString() },
-        { x: "60vw", y: (headlineTop - 75).toString() },
+        {
+          x: "-30vw",
+          y: (headlineTop - 65).toString() + "px",
+          rotate: "-20deg",
+        },
+        { x: "0vw", y: (headlineTop - 75).toString() + "px", rotate: "-20deg" },
+        {
+          x: "30vw",
+          y: (headlineTop - 65).toString() + "px",
+          rotate: "-20deg",
+        },
+        {
+          x: "60vw",
+          y: (headlineTop - 75).toString() + "px",
+          rotate: "-20deg",
+        },
       ],
     });
   };
 
   const [backPlane, backPlaneApi] = useSpring(() => ({
-    from: { x: "-60vw", y: "0vw" },
+    from: {
+      x: "-60vw",
+      y: "25px",
+      rotate: "-20deg",
+    },
     config: {
       duration: animationDuration * 3,
     },
+    clamp: true,
   }));
 
   backPlaneApi.start({
     from: {
       x: "-60vw",
-      y: (headlineTop + 110).toString(),
+      y: (headlineTop + 110).toString() + "px",
     },
     delay: 1000,
 
     to: [
-      { x: "-30vw", y: (headlineTop + 120).toString() },
-      { x: "0vw", y: (headlineTop + 110).toString() },
-      { x: "30vw", y: (headlineTop + 120).toString() },
-      { x: "60vw", y: (headlineTop + 110).toString() },
+      { x: "-30vw", y: (headlineTop + 125).toString() + "px" },
+      { x: "0vw", y: (headlineTop + 110).toString() + "px" },
+      { x: "30vw", y: (headlineTop + 125).toString() + "px" },
+      { x: "60vw", y: (headlineTop + 110).toString() + "px" },
     ],
   });
 
