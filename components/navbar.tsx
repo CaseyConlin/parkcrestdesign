@@ -36,10 +36,10 @@ export default function Navbar({ openModal = () => {} }) {
   });
 
   return (
-    <nav className="relative bg-white  w-full h-20 top-0 left-0 border-b border-gray-200  z-50">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 z-50">
+    <nav className="relative bg-white w-full h-20 top-0 left-0 border-b border-gray-200 z-50">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto md:p-3 z-50">
         <Link href="/" className="flex items-center z-50">
-          <div className="w-3/5">
+          <div className="w-3/5 px-2 pt-3 -mb-2 md:mb-0 md:pt-0 md:px-0">
             <Image
               className="w-full hover:scale-125 duration-500 transition-all"
               priority
@@ -65,7 +65,7 @@ export default function Navbar({ openModal = () => {} }) {
             }}
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  "
+            className="inline-flex items-center p-2 m-3 md:m-0text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  "
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >
@@ -95,14 +95,13 @@ export default function Navbar({ openModal = () => {} }) {
           }`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white z-50">
+          <ul className="flex flex-col  md:p-0 mt-4 font-medium border border-gray-100  bg-slate-300 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white z-50">
             <li>
               <Link
                 href="/about"
                 className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 hover:no-underline md:hover:bg-transparent md:hover:text-pd-blue md:p-0 md: z-50 hover:scale-110 duration-500 transition-all ${
                   pathname.startsWith("/about") ? "text-pd-blue-dark" : ""
                 }`}
-                // aria-current="page"
               >
                 About
               </Link>
@@ -114,7 +113,7 @@ export default function Navbar({ openModal = () => {} }) {
                 }}
                 id="mega-menu-full-dropdown-button"
                 data-collapse-toggle="mega-menu-full-dropdown"
-                className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded md:w-auto  md:border-0 md:hover:text-pd-blue md:p-0 z-20 hover:scale-105 duration-500 transition-all ${
+                className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded md:w-auto md:border-0 md:hover:text-pd-blue md:p-0 z-20 md:hover:scale-105 duration-500 transition-all ${
                   pathname.startsWith("/websites") ? "text-pd-blue-dark" : ""
                 }`}
               >
@@ -151,34 +150,44 @@ export default function Navbar({ openModal = () => {} }) {
       <animated.div
         style={menuAppear}
         id="mega-menu-full-dropdown"
-        className={`border-gray-200 shadow-sm bg-gray-50 md:bg-white border-b -z-50 ${
+        className={`border-gray-200 shadow-lg bg-slate-100 border-b -z-50 ${
           isMegaMenuOpen ? "" : "hidden"
         }`}
       >
-        <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 sm:grid-cols-2 md:px-6 -z-50">
-          <div className="">
+        <div className="grid leading-tight divide-x-2 max-w-screen-xl px-4 py-5 mx-auto text-gray-900 sm:grid-cols-2 md:px-6 -z-50">
+          <div className="py-3 px-4">
             <div>
-              <div className="font-semibold">
-                Websites to Connect With Your Users
+              <div className="text-md lg:text-2xl font-extrabold">
+                <h4 className="pb-1">Websites to Connect With Your Users</h4>
               </div>
-              <span className="text-sm text-gray-500 ">
+              <span className="text-xs lg:text-sm text-gray-800">
                 We bring your vision to life by providing guidance and working
                 with you collaboratively to create an experience that will
                 delight your customers and deliver something you will be proud
                 to have represent your business.
               </span>
             </div>
+            <Link href="/websites" className="hover:no-underline">
+              <button
+                type="button"
+                className=" m-2 md:flex text-white bg-pd-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 hover:bg-pd-blue-dark hover:scale-105 duration-500 transition-all z-50"
+              >
+                Learn More
+              </button>
+            </Link>
           </div>
 
-          <ul>
-            <h3>Our Work</h3>
+          <ul className="bg-white border-b">
+            <h3 className="lg:text-xl block p-3 pb-1 border-b-2 font-semibold bg-slate-300">
+              Highlighted Work
+            </h3>
             <li>
               <Link
                 href="/websites/ffany"
                 className="block p-3 rounded-lg hover:bg-gray-100 hover:no-underline"
               >
                 <div className="font-semibold">Free For All</div>
-                <span className="text-sm text-gray-500 ">
+                <span className="text-xs lg:text-sm text-gray-500 ">
                   A highly-accessible website with intuitive pathways that
                   connect users to curated resources to defend intellectual
                   freedom.
@@ -191,7 +200,7 @@ export default function Navbar({ openModal = () => {} }) {
                 className="block p-3 rounded-lg hover:bg-gray-100 hover:no-underline"
               >
                 <div className="font-semibold">Professional Painters</div>
-                <span className="text-sm text-gray-500 ">
+                <span className="text-xs lg:text-sm text-gray-500 ">
                   A website that leverages a company's extensive portfolio to
                   create an impactful SEO footprint to build trust and connect
                   with new clients.
@@ -206,7 +215,7 @@ export default function Navbar({ openModal = () => {} }) {
                 <div className="font-semibold">
                   Library Events Management with Increased Visbility
                 </div>
-                <span className="text-sm text-gray-500 ">
+                <span className="text-xs lg:text-sm text-gray-500 ">
                   This library's events calendar provides unprecedented organic
                   SEO reach, as well as events management tools for library
                   users and staff.
