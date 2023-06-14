@@ -39,6 +39,7 @@ export default function Home({
           link="/websites/ffany"
           videoUrl="https://embed-ssl.wistia.com/deliveries/405b909f1776ba722fdbba200ee8fca834d62ede/file.mp4"
           siteUrl="https://freeforallny.org/"
+          bgColor="bg-slate-200"
         />
       </section>
 

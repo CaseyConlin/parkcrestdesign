@@ -54,7 +54,8 @@ export default function CardContainer() {
         <h3 className="mb-6 text-3xl font-bold">What We're About</h3>
 
         <p className="mb-6 pb-2 md:mb-12 md:pb-0">
-          We focus on user experience to ensure people want to use your
+          We help businesses and organizations connect with their customers
+          through great websites and digital and print materials.
         </p>
       </div>
 
