@@ -14,7 +14,7 @@ export default function Theshedhaus() {
         title="The Shed Haus"
         subtitle="Powerful SEO and Quick Customer Connections"
         content="Updates to The Shed Haus website keep content fresh, and upgrades to the metadata in the site’s structure by Parkcrest Design help these sheds and products rise in search results. The Shed Haus website features a robust online storefront with inventory, an Instagram slider with automatically updated posts, and a Facebook chat widget to connect with customers faster."
-        videoUrl="https://embed-ssl.wistia.com/deliveries/7f7ab82fbbffb91bc1bd4cb45ebbf68c427b11e8/file.mp4"
+        videoUrl="https://embed-ssl.wistia.com/deliveries/d1019a7e4c510590fca05fa2d9123af4f8d9b519/file.mp4"
         siteUrl="https://theshedhaus.com/"
       />
       <ContactForm />
