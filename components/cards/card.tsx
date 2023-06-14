@@ -31,7 +31,7 @@ export const Card = forwardRef(function Card(
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="p-3 -rotate-1"
+            className="w-24 h-24 p-3 -rotate-1"
             style={props.animation}
           >
             {props.svgPath.map((path) => {
