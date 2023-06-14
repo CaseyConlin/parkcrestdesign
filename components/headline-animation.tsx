@@ -15,11 +15,12 @@ export default function HeadlineAnimation({}) {
   const [width, setWidth] = useState(0);
   const [headlineTop, setHeadlineTop] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [moblieAnimationChange, setMobileAnimationChange] = useState(false);
 
   const headlines = [
     "Your Wingman for Websites",
     "Clear Skies Ahead for Your New Website",
-    "Websites to Help Your business Take Off",
+    "Websites to Help Your Business Take Off",
   ];
 
   const [headline, setHeadline] = useState(headlines[0]);
@@ -33,14 +34,15 @@ export default function HeadlineAnimation({}) {
   useEffect(() => {
     setWidth(ref.current.offsetWidth);
     writerPlaneAnimation();
-  }, [headlineTop, headline]);
+  }, [headlineTop, headline, moblieAnimationChange]);
 
   const animationDuration = 1500;
 
   const headlineUpdate = () => {
     const headlineIndex = headlines.indexOf(headline);
-    console.log("hey");
-    if (headlineIndex >= headlines.length - 1) {
+    if (windowWidth < 768) {
+      setMobileAnimationChange(!moblieAnimationChange);
+    } else if (headlineIndex >= headlines.length - 1) {
       setHeadline(headlines[0]);
     } else {
       setHeadline(headlines[headlineIndex + 1]);
@@ -58,24 +60,28 @@ export default function HeadlineAnimation({}) {
     writerPlaneApi.start({
       from: {
         x: "-60vw",
-        y: (headlineTop - 75).toString() + "px",
+        y: "8.75vw",
         rotate: "-20deg",
       },
       to: [
         {
           x: "-30vw",
-          y: (headlineTop - 65).toString() + "px",
+          y: "9vw",
           rotate: "-20deg",
         },
-        { x: "0vw", y: (headlineTop - 75).toString() + "px", rotate: "-20deg" },
+        {
+          x: "0vw",
+          y: "8.75vw",
+          rotate: "-20deg",
+        },
         {
           x: "30vw",
-          y: (headlineTop - 65).toString() + "px",
+          y: "9vw",
           rotate: "-20deg",
         },
         {
           x: "60vw",
-          y: (headlineTop - 75).toString() + "px",
+          y: "8.75vw",
           rotate: "-20deg",
         },
       ],
@@ -85,51 +91,52 @@ export default function HeadlineAnimation({}) {
   const [backPlane, backPlaneApi] = useSpring(() => ({
     from: {
       x: "-60vw",
-      y: "25px",
+      y: (headlineTop + 110).toString() + "px",
       rotate: "-20deg",
     },
     config: {
       duration: animationDuration * 3,
     },
-    clamp: true,
   }));
-
   backPlaneApi.start({
     from: {
       x: "-60vw",
-      y: (headlineTop + 110).toString() + "px",
+      y: "18vw",
+      rotate: "-20deg",
     },
     delay: 1000,
 
     to: [
-      { x: "-30vw", y: (headlineTop + 125).toString() + "px" },
-      { x: "0vw", y: (headlineTop + 110).toString() + "px" },
-      { x: "30vw", y: (headlineTop + 125).toString() + "px" },
-      { x: "60vw", y: (headlineTop + 110).toString() + "px" },
+      { x: "-30vw", y: "20vw", rotate: "-20deg" },
+      { x: "0vw", y: "18vw", rotate: "-20deg" },
+      { x: "30vw", y: "20vw", rotate: "-20deg" },
+      { x: "60vw", y: "18vw", rotate: "-20deg" },
     ],
   });
 
   const [trail, headlineApi] = useTrail(headline.length, () => ({
     from: { y: "0.5vw", opacity: 0, scale: 0.15 },
     config: {
-      duration: 135,
+      duration:
+        windowWidth === 0 || windowWidth < 600 ? headline.length * 9 : 150,
     },
   }));
 
   useIsomorphicLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
     setWindowWidth(window.innerWidth);
+    console.log(windowWidth);
 
     headlineApi.start({
+      reset: true,
       from: { y: "0.5vw", opacity: 0, scale: 0.15 },
       to: async (next, cancel) => {
         await next({
           y: "0.5vw",
           opacity: 0,
           scale: 0.25,
-          delay: Math.floor(
-            ((windowWidth - width) / windowWidth) * 2.5 * animationDuration
-          ),
+          delay:
+            ((windowWidth - width) / windowWidth) * 2.75 * animationDuration,
         });
         await next({
           y: "0vw",
@@ -172,7 +179,7 @@ export default function HeadlineAnimation({}) {
         });
       },
     });
-  }, [width, headline]);
+  }, [width, headline, moblieAnimationChange]);
 
   const topCloudAnimation = useSpring({
     config: { friction: 500 },
