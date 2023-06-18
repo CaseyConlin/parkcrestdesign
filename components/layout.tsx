@@ -26,7 +26,7 @@ export default function Layout({
         />
         <meta
           property="og:image"
-          content="/images/parkcrest_design_logo_black.svg"
+          content="https://www.parkcrestdesign/images/parkcrest_design_logo_black.svg"
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
