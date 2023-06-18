@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
 import { useState } from "react";
 import Navbar from "../components/navbar";
 import Footer from "./footer";
@@ -25,7 +22,7 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Parkcrest Design offers complete webpages and web development support as well as print materials to support businesses in the Hudson Valley, NY and beyond."
+          content="Parkcrest Design offers complete webpages and web development support as well as print materials to support businesses and nonprofits."
         />
         <meta
           property="og:image"

@@ -21,7 +21,8 @@
     "pages/posts/post1.js",
     "components/date.tsx",
     "components/headline-animation.tsx",
-    "components/contact.tsx"
+    "components/contact.tsx",
+    "lib/gtags.js"
   ],
   "exclude": ["node_modules"]
 }
