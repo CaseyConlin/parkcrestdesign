@@ -47,7 +47,7 @@ export default function Home({
         <FeatureItem
           title="A Professional Painter's Portfolio"
           content="Subtle animation elements, clean design, and robust SEO content provide a site to bolster business."
-          link="/websites/ffany"
+          link="/websites/thomsenpainting"
           videoUrl="https://embed-ssl.wistia.com/deliveries/7f7ab82fbbffb91bc1bd4cb45ebbf68c427b11e8/file.mp4"
           siteUrl="https://thomsenpainting.com/"
         />
