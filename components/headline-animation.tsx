@@ -125,7 +125,6 @@ export default function HeadlineAnimation({}) {
   useIsomorphicLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
     setWindowWidth(window.innerWidth);
-    console.log(windowWidth);
 
     headlineApi.start({
       reset: true,
