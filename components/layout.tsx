@@ -24,9 +24,12 @@ export default function Layout({
           name="description"
           content="Parkcrest Design offers complete webpages and web development support as well as print materials to support businesses and nonprofits."
         />
+
         <meta
           property="og:image"
-          content="https://www.parkcrestdesign/images/parkcrest_design_logo_black.svg"
+          content={`${
+            process.env.PD_URL ? "https://" + process.env.PD_URL : ""
+          }/api/og`}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />

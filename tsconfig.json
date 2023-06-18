@@ -22,7 +22,8 @@
     "components/date.tsx",
     "components/headline-animation.tsx",
     "components/contact.tsx",
-    "lib/gtags.js"
+    "lib/gtags.js",
+    "pages/api/og.tsxx"
   ],
   "exclude": ["node_modules"]
 }

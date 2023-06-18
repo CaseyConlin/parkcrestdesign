@@ -9,6 +9,7 @@
     "@react-spring/web": "^9.7.2",
     "@sendgrid/mail": "^7.7.0",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@vercel/og": "^0.5.7",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.12.16",
     "gray-matter": "^4.0.3",
