@@ -29,7 +29,7 @@ export default function Websites() {
       <FeatureItem
         title="FFANY"
         content="User Experience for Resources to Combat Censorship"
-        link="websites/freeforallny.org/"
+        link="websites/ffany"
         videoUrl="https://embed-ssl.wistia.com/deliveries/405b909f1776ba722fdbba200ee8fca834d62ede/file.mp4"
         siteUrl="https://freeforallny.org/"
         bgColor="bg-slate-200"
@@ -37,14 +37,14 @@ export default function Websites() {
       <FeatureItem
         title="Thomsen Painting"
         content="A Portfolio for a Professional Painter"
-        link="websites/thomsenpainting.com/"
+        link="websites/thomsenpainting"
         videoUrl="https://embed-ssl.wistia.com/deliveries/7f7ab82fbbffb91bc1bd4cb45ebbf68c427b11e8/file.mp4"
         siteUrl="https://thomsenpainting.com/"
       />
       <FeatureItem
         title="Stone Ridge Library Calendar"
         content="A Modern Calendar to Highlight Library Events"
-        link="websites/stoneridgelibrary.org/events/"
+        link="websites/stoneridge/"
         videoUrl="https://embed-ssl.wistia.com/deliveries/a70d0138fa56efff52e97209cfe36091b692c8b4/file.mp4"
         siteUrl="https://stoneridgelibrary.org/events/"
         bgColor="bg-slate-200"
@@ -52,14 +52,14 @@ export default function Websites() {
       <FeatureItem
         title="The Shed Haus"
         content="Powerful SEO and Quick Customer Connections"
-        link="websites/theshedhaus.com/"
+        link="websites/theshedhaus"
         videoUrl="https://embed-ssl.wistia.com/deliveries/d1019a7e4c510590fca05fa2d9123af4f8d9b519/file.mp4"
         siteUrl="https://theshedhaus.com/"
       />
       <FeatureItem
         title="Sissys Cafe"
         content="To the Point with a POS Integration"
-        link="websites/sissyscafekingston.com/"
+        link="websites/sissys"
         videoUrl="https://embed-ssl.wistia.com/deliveries/5c26645ff37d03e193e44b3ac9204595fc27ef8b/file.mp4"
         siteUrl="https://sissyscafekingston.com/"
         bgColor="bg-slate-200"
