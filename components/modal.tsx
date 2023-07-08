@@ -9,8 +9,8 @@ export default function Modal({ closeModal = () => {} }) {
     >
       <div className="flex flex-wrap justify-center content-center w-full max-w-2xl h-96 max-h-full">
         <div className="relative bg-white rounded-lg shadow-2xl">
-          <div className="flex bg-pd-blue-dark items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-            <h3 className="text-2xl text-white font-semibold dark:text-white">
+          <div className="flex bg-pd-blue-dark items-start justify-between p-4 border-b rounded-t ">
+            <h3 className="text-2xl text-white font-semibold ">
               Let's Connect!
             </h3>
             <button
@@ -37,16 +37,16 @@ export default function Modal({ closeModal = () => {} }) {
           </div>
 
           <div className="p-8 space-y-2 pb-12">
-            <p className="text-lg text-center leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="text-lg text-center leading-relaxed text-gray-600 ">
               We'd love to hear about your next project, so please reach out.
             </p>
-            <p className="text-lg text-center leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="text-lg text-center leading-relaxed text-gray-600 ">
               (But even if you don't have a project in the works, it would still
               be great to connect!)
             </p>
           </div>
 
-          <div className="flex items-center bg-black justify-center p-6 space-x-2 space-y-3 border-t border-gray-200 rounded-b dark:border-gray-600">
+          <div className="flex items-center bg-black justify-center p-6 space-x-2 space-y-3 border-t border-gray-200 rounded-b ">
             <div className="flex flex-col gap-3 items-center justify-center space-x-8">
               <a
                 href="mailto:info@parkcrestdesign.com"

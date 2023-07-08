@@ -87,17 +87,17 @@ export default function ContactForm() {
   };
   return (
     <>
-      <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-4 pt-8 lg:px-40 bg-blue-50 dark:bg-blue-900 md:h-96">
+      <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-4 pt-8 lg:px-40 bg-blue-50  md:h-96">
         <div className="mx-auto md:mb-10 ">
           <div className="badge bg-pd-green inline-block rounded-xl">
             <p className="font-bold text-md px-4 py-1 text-black">
               Let's Connect
             </p>
           </div>
-          <h1 className="text-4xl font-bold mt-4 dark:text-gray-50 text-gray-700">
+          <h1 className="text-4xl font-bold mt-4  text-gray-700">
             Let's talk about your next project!
           </h1>
-          <p className="text-lg text-gray-700 mt-4 font-light dark:text-gray-200">
+          <p className="text-lg text-gray-700 mt-4 font-light ">
             Do you need a new website? A new logo? A new menu for your
             restaurant? Whatever it is, we want to hear about your next awesome
             thing and help you make it happen!
@@ -190,13 +190,10 @@ export default function ContactForm() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
+          className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white "
         >
-          <label
-            htmlFor="fullname"
-            className="text-gray-500 font-light mt-8 dark:text-gray-50"
-          >
-            Name<span className="text-red-500 dark:text-gray-50">*</span>
+          <label htmlFor="fullname" className="text-gray-500 font-light mt-8 ">
+            Name<span className="text-red-500 ">*</span>
           </label>
           <input
             type="text"
@@ -211,10 +208,7 @@ export default function ContactForm() {
             <p className="text-red-500">Fullname cannot be empty.</p>
           )}
 
-          <label
-            htmlFor="email"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
-          >
+          <label htmlFor="email" className="text-gray-500 font-light mt-4 ">
             E-mail<span className="text-red-500">*</span>
           </label>
           <input
@@ -230,10 +224,7 @@ export default function ContactForm() {
             <p className="text-red-500">Email cannot be empty.</p>
           )}
 
-          <label
-            htmlFor="message"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
-          >
+          <label htmlFor="message" className="text-gray-500 font-light mt-4 ">
             Message<span className="text-red-500">*</span>
           </label>
           <textarea

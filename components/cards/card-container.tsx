@@ -49,7 +49,7 @@ export default function CardContainer() {
   });
 
   return (
-    <section className="text-neutral-700 dark:text-neutral-300 mx-2 md:mx-10 my-10">
+    <section className="text-neutral-700  mx-2 md:mx-10 my-10">
       <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
         <h3 className="mb-6 text-3xl font-bold">What We're About</h3>
 
