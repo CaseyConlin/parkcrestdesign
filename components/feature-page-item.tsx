@@ -34,7 +34,7 @@ export const FeaturePageItem = (props: {
       </div>
       <div className="grid max-w-screen-xl px-4 pt-8 pb-20 mx-auto gap-10 lg:gap-20 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-6 ">
-          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl ">
             {props.content}
           </p>
 

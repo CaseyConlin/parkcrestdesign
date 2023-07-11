@@ -33,6 +33,11 @@ export default function Home({
       </section>
 
       <section>
+        <div className="grid max-w-screen-xl px-4 mx-auto mt-20 justifyConten text-neutral-700 ">
+          <h3 className="mb-6 text-left  px-3 text-5xl font-bold">
+            Recent Work
+          </h3>
+        </div>
         <FeatureItem
           title="Defending Intellectual Freedom"
           content="A highly-accessible site that features intuitive user pathways to help informatoin professoinals and communities combat censorship."
@@ -41,9 +46,7 @@ export default function Home({
           siteUrl="https://freeforallny.org/"
           bgColor="bg-slate-200"
         />
-      </section>
 
-      <section>
         <FeatureItem
           title="A Professional Painter's Portfolio"
           content="Subtle animation elements, clean design, and robust SEO content provide a site to bolster business."

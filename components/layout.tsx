@@ -5,7 +5,6 @@ import Navbar from "../components/navbar";
 import Footer from "./footer";
 import Modal from "./modal";
 
-// const name = "Casey Conlin";
 export const siteTitle = "Parkcrest Design";
 
 export default function Layout({
